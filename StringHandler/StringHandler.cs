@@ -1,19 +1,29 @@
-﻿
+﻿using System;
 using System.Text.RegularExpressions;
 
-namespace StringHandler
+namespace LibraryForStringHandler
 {
     public class StringHandler
     {
 
-
-        public static bool ValidateInput(string input)
+        /// <summary>
+        /// Метод для проверки вводимых строковых данных на корректность.
+        /// </summary>
+        /// <returns></returns>
+        public static string ValidateInput(string chekingString)
         {
-            string pattern = @"^\+\d+ [0-23]{2}:[0-23]{2} \d+$"; // Формат: +XXXXXXXXXXXXX 00:00 XXX
-            return Regex.IsMatch(input, pattern);
+            //string pattern = @"^\+\d+ [0-23]{2}:[0-5]{1}[0-9]{1} \d+$"; // Формат: +XXXXXXXXXXXXX 00:00 XXX
+            string pattern = @"^\+\d+ ?0[0-9]|1[0-9]|2[0-3]:?[0-5][0-9] \d+$";
+
+            while (!Regex.IsMatch(chekingString, pattern))
+            {
+                Console.WriteLine("\nНекорректный ввод!");
+                chekingString = Console.ReadLine();
+            }
+            return chekingString;
         }
 
-        public string DividingTheString(string String)
+        public static string DividingTheString(string String)
         {
             bool isTrue;
             string resString = "";

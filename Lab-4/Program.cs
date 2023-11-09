@@ -1,4 +1,4 @@
-﻿using StringHandler;
+﻿using LibraryForStringHandler;
 using System;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -9,34 +9,57 @@ namespace Lab_4
     {
         static void Main(string[] args)
         {
-            string inputString;
-            Console.WriteLine("Введите строку:");
-            inputString = Console.ReadLine();
-            Console.WriteLine(DividingTheString(inputString));
-            Console.ReadKey();
+            StringBuilder sb = new StringBuilder();
+            string inputStringV1, inputString;
+            int n;
+            
 
             bool isRun = true;
             while (isRun) 
             {
-                Console.WriteLine("\n");
-                Console.WriteLine();
-                Console.WriteLine();
+                Console.WriteLine("\n╔════════════════════════════════════════╗");
+                Console.WriteLine("║           Выберите действие:           ║");
+                Console.WriteLine("║            1 - Первая задача;          ║");
+                Console.WriteLine("║   2 - Ввод записей для второй задачи;  ║");
+                Console.WriteLine("║   3 - Ввод записей для второй задачи;  ║");
+                Console.WriteLine("║         0 - Выход из программы;        ║");
+                Console.WriteLine("╚════════════════════════════════════════╝\n");
 
                 switch (ReadInt())
                 {
                     case 1:
                         Console.WriteLine("Введите строку:");
-                        inputString = Console.ReadLine();
-                        Console.WriteLine(DividingTheString(inputString));
+                        inputStringV1 = Console.ReadLine();
+                        Console.WriteLine(StringHandler.DividingTheString(inputStringV1));
                         break;
                     
                     case 2:
+
+                        int i = 0;
+                        Console.WriteLine("Введите количество записей: ");
+                        n = ReadInt();
+                        Console.WriteLine("Формат записи: +XXXXXXXXXXXXX 00:00 XXX(секунд)");
+                        while (i < n)
+                        {
+
+                            inputString = StringHandler.ValidateInput(Console.ReadLine());
+                            sb.Append(inputString);
+                            sb.AppendLine("\n");
+                            i++;
+                        }
+                        Console.WriteLine("Вы ввели следующие записи: ");
+                        Console.WriteLine(sb);
+
                         break;
                     
                     case 3:
+                        Console.WriteLine("Введите запись (Формат: +XXXXXXXXXXXXX 00:00 XXX(секунд)): ");
                         break;
                     
                     case 0:
+                        isRun = false;
+                        Console.WriteLine("Выход из программы...");
+                        Console.ReadKey();
                         break;
                     
                     default: 
@@ -45,30 +68,6 @@ namespace Lab_4
                 }
             }
 
-        }
-
-        static public string DividingTheString(string String)
-        {
-            bool isTrue;
-            string resString = "";
-            resString = resString + String[0];
-            for (int i = 1; i < String.Length; i++)
-            {
-                isTrue = false;
-                for (int j = 0; j < resString.Length; j++)
-                {
-                    if (resString[j] == String[i] || isTrue)
-                    {
-                        isTrue = true;
-                        break;
-                    }
-                }
-                if (!isTrue)
-                {
-                    resString = resString + String[i];
-                }
-            }
-            return resString;
         }
 
         /// <summary>
