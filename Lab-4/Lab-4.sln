@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab-4", "Lab-4.csproj", "{9
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringHandler", "..\StringHandler\StringHandler.csproj", "{E116D5D4-938D-4173-89AC-79FB5DC92649}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestForStrings", "..\TestForStrings\TestForStrings.csproj", "{C84454A7-C409-42FC-8409-46C35E900F2C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{E116D5D4-938D-4173-89AC-79FB5DC92649}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E116D5D4-938D-4173-89AC-79FB5DC92649}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E116D5D4-938D-4173-89AC-79FB5DC92649}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C84454A7-C409-42FC-8409-46C35E900F2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C84454A7-C409-42FC-8409-46C35E900F2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C84454A7-C409-42FC-8409-46C35E900F2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C84454A7-C409-42FC-8409-46C35E900F2C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
