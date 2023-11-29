@@ -27,6 +27,8 @@ namespace LibraryForStringHandler
 
         public static string DividingTheString(string String)
         {
+            if (String == "")
+                String = " ";
             bool isTrue;
             string resString = "";
             resString += String[0];
