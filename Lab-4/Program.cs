@@ -1,5 +1,6 @@
 ﻿using LibraryForStringHandler;
 using System;
+using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -10,50 +11,50 @@ namespace Lab_4
         static void Main(string[] args)
         {
             StringBuilder sb = new StringBuilder();
-            string inputStringV1, inputString;
-            int n;
+            List<string> phoneRecords = new List<string>();
+            string inputString;
+            int n, i;
             
 
             bool isRun = true;
             while (isRun) 
             {
                 Console.WriteLine("\n╔════════════════════════════════════════╗");
-                Console.WriteLine("║           Выберите действие:           ║");
+                Console.WriteLine("║             Выберите действие:         ║");
                 Console.WriteLine("║            1 - Первая задача;          ║");
-                Console.WriteLine("║   2 - Ввод записей для второй задачи;  ║");
-                Console.WriteLine("║   3 - Ввод записей для второй задачи;  ║");
-                Console.WriteLine("║         0 - Выход из программы;        ║");
+                Console.WriteLine("║            2 - Вторая задача;          ║");
+                Console.WriteLine("║          0 - Выход из программы;       ║");
                 Console.WriteLine("╚════════════════════════════════════════╝\n");
 
                 switch (ReadInt())
                 {
                     case 1:
                         Console.WriteLine("Введите строку:");
-                        inputStringV1 = Console.ReadLine();
-                        Console.WriteLine(StringHandler.DividingTheString(inputStringV1));
+                        inputString = Console.ReadLine();
+                        Console.WriteLine(StringHandler.DividingTheString(inputString));
                         break;
                     
-                    case 2:
 
-                        int i = 0;
+                    case 2:
+                        // Пример входных данных (список строк с номерами, временем и длительностью звонков)
                         Console.WriteLine("Введите количество записей: ");
                         n = ReadInt();
-                        Console.WriteLine("Формат записи: +XXXXXXXXXXXXX 00:00 XXX(секунд)");
+                        Console.WriteLine("\nФормат записи: +XXXXXXXXXXXX 00:00 XXX(секунд)\n");
+                        i = 0;
                         while (i < n)
                         {
-
-                            inputString = StringHandler.ValidateInput(Console.ReadLine());
-                            sb.Append(inputString);
-                            sb.AppendLine("\n");
+                            phoneRecords.Add(Console.ReadLine()); // +1234567890123 00:30 150 +9876543210987 23:45 120 +1112223334445 12:58 90 +1234567890123 01:30 100 +4445556667778 24:15 80
                             i++;
                         }
-                        Console.WriteLine("Вы ввели следующие записи: ");
-                        Console.WriteLine(sb);
+                        
+                        Console.WriteLine("\nВведите номер телефона, для которого ищем звонки после полуночи: \n");
+                        // Номер, для которого ищем звонки после полуночи
+                        string targetNumber = Console.ReadLine();
+                        Console.WriteLine();
 
-                        break;
-                    
-                    case 3:
-                        Console.WriteLine("Введите запись (Формат: +XXXXXXXXXXXXX 00:00 XXX(секунд)): ");
+                        StringBuilder filteredRecords = StringHandler.GetCallsAfterMidnight(phoneRecords, targetNumber);
+
+                        Console.WriteLine(filteredRecords.ToString());
                         break;
                     
                     case 0:
