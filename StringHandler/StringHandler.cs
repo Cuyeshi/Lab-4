@@ -8,23 +8,6 @@ namespace LibraryForStringHandler
     public class StringHandler
     {
 
-        /// <summary>
-        /// Метод для проверки вводимых строковых данных на корректность.
-        /// </summary>
-        /// <returns></returns>
-        public static string ValidateInput(string chekingString)
-        {
-            //string pattern = @"^\+\d+ [0-23]{2}:[0-5]{1}[0-9]{1} \d+$"; // Формат: +XXXXXXXXXXXX 00:00 XXX
-            string pattern = @"^\+\d+ ?0[0-9]|1[0-9]|2[0-3]:?[0-5][0-9] \d+$";
-
-            while (!Regex.IsMatch(chekingString, pattern))
-            {
-                Console.WriteLine("\nНекорректный ввод!");
-                chekingString = Console.ReadLine();
-            }
-            return chekingString;
-        }
-
         public static string DividingTheString(string String)
         {
             if (String == "")
@@ -62,6 +45,7 @@ namespace LibraryForStringHandler
 
                 if (parts.Length != 3)
                 {
+                    Console.WriteLine($"Некорректны ввод записи: {k + 1}\n");
                     phoneRecords.RemoveAt(k);
                     break;
                 }
@@ -75,6 +59,7 @@ namespace LibraryForStringHandler
                     Regex timeRegex = new Regex(@"^0[0-9]|1[0-9]|2[0-3]:?[0-5][0-9]$");
                     if (!timeRegex.IsMatch(callTime))
                     {
+                        Console.WriteLine($"Несоответствующий формат времени для записи: {k + 1}\n");
                         phoneRecords.RemoveAt(k);
                         break;
                     }
@@ -84,10 +69,11 @@ namespace LibraryForStringHandler
                         string[] timeParts = callTime.Split(':');
                         int hours = Convert.ToInt32(timeParts[0]);
                         int minutes = Convert.ToInt32(timeParts[1]);
-
+                        
                         // Проверка корректности времени (не больше 24 часов в сутках и не больше 60 минут в часе)
                         if (hours >= 24 || minutes >= 60)
                         {
+                            Console.WriteLine($"Несоответствующий формат времени для записи: {k + 1}\n");
                             phoneRecords.RemoveAt(k);
                             break;
                         }
@@ -104,6 +90,8 @@ namespace LibraryForStringHandler
 
                 k++;
             }
+            if (result.Length != 0)
+                result.Remove(result.Length - 2, 2);
 
             return result;
         }

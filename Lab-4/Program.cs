@@ -10,7 +10,6 @@ namespace Lab_4
     {
         static void Main(string[] args)
         {
-            StringBuilder sb = new StringBuilder();
             List<string> phoneRecords = new List<string>();
             string inputString;
             int n, i;
@@ -43,7 +42,7 @@ namespace Lab_4
                         i = 0;
                         while (i < n)
                         {
-                            phoneRecords.Add(Console.ReadLine()); // +1234567890123 00:30 150 +9876543210987 23:45 120 +1112223334445 12:58 90 +1234567890123 01:30 100 +4445556667778 24:15 80
+                            phoneRecords.Add(Console.ReadLine()); // +1234567890123 00:30 150 +9876543210987 23:45 120 +1112223334445 12:58 90 +1234567890123 01:30 100 +4445556667778 23:15 80
                             i++;
                         }
                         

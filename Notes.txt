@@ -1,0 +1,16 @@
+/// <summary>
+/// Метод для проверки вводимых строковых данных на корректность.
+/// </summary>
+/// <returns></returns>
+public static string ValidateInput(string chekingString)
+{
+    //string pattern = @"^\+\d+ [0-23]{2}:[0-5]{1}[0-9]{1} \d+$"; // Формат: +XXXXXXXXXXXX 00:00 XXX
+    string pattern = @"^\+\d+ ?0[0-9]|1[0-9]|2[0-3]:?[0-5][0-9] \d+$";
+
+    while (!Regex.IsMatch(chekingString, pattern))
+    {
+        Console.WriteLine("\nНекорректный ввод!");
+        chekingString = Console.ReadLine();
+    }
+    return chekingString;
+}
