@@ -6,9 +6,18 @@ using System.Collections.Generic;
 
 namespace TestForStrings
 {
+    /// <summary>
+    /// Класс с тестами для проверки работоспособности программы.
+    /// </summary>
     [TestClass]
     public class TestsForStrings
     {
+        /// <summary>
+        /// Метод для сравнения двух строковых переменных.
+        /// </summary>
+        /// <param name="firstString"></param>
+        /// <param name="secondString"></param>
+        /// <returns></returns>
         private static bool CompareStrings(string firstString, string secondString)
         {
             if (firstString == secondString)
@@ -18,7 +27,7 @@ namespace TestForStrings
         }
 
         /// <summary>
-        /// Тест, проверяющий работоспособность case 1 при вводе одного слова в строке.
+        /// Тест, проверяющий работоспособность первой задачи при вводе одного слова в строке.
         /// </summary>
         [TestMethod]
         public void OneWordTestCase1()
@@ -31,7 +40,7 @@ namespace TestForStrings
         }
 
         /// <summary>
-        /// Тест, проверяющий работоспособность case 1 при вводе одного слова в строке.
+        /// Тест, проверяющий работоспособность первой задачи при вводе одного слова в строке.
         /// </summary>
         [TestMethod]
         public void FewWordsTestCase1()
@@ -43,6 +52,9 @@ namespace TestForStrings
             Assert.IsTrue(CompareStrings(convertedString, validString));
         }
 
+        /// <summary>
+        /// Тест, проверяющий работоспособность первой задачи при вводе пустой строки
+        /// </summary>
         [TestMethod]
         public void ZeroWordsTestCase1()
         {
@@ -53,6 +65,9 @@ namespace TestForStrings
             Assert.IsTrue(CompareStrings(convertedString, validString));
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [TestMethod]
         public void NumbersStringTestCase1()
         {
@@ -63,6 +78,9 @@ namespace TestForStrings
             Assert.IsTrue(CompareStrings(convertedString, validString));
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [TestMethod]
         public void DifferentRegisterTestCase1()
         {
@@ -73,6 +91,9 @@ namespace TestForStrings
             Assert.IsTrue(CompareStrings(convertedString, validString));
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [TestMethod]
         public void UpperRegisterTestCase1()
         {
@@ -83,6 +104,9 @@ namespace TestForStrings
             Assert.IsTrue(CompareStrings(convertedString, validString));
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [TestMethod]
         public void LowerRegisterTestCase1()
         {
@@ -93,6 +117,9 @@ namespace TestForStrings
             Assert.IsTrue(CompareStrings(convertedString, validString));
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [TestMethod]
         public void SpecialSymbolsTestCase1()
         {
@@ -103,6 +130,9 @@ namespace TestForStrings
             Assert.IsTrue(CompareStrings(convertedString, validString));
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [TestMethod]
         public void OneRecordAfterMidNight()
         {
@@ -118,6 +148,9 @@ namespace TestForStrings
             Assert.IsTrue(CompareStrings(convertedString, validString));
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [TestMethod]
         public void FourRecordAfterMidNight()
         {
@@ -137,6 +170,9 @@ namespace TestForStrings
             Assert.IsTrue(CompareStrings(convertedString, validString));
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [TestMethod]
         public void ErrorInOneRecordsTestCase2()
         {
@@ -152,6 +188,9 @@ namespace TestForStrings
             Assert.IsTrue(CompareStrings(convertedString, validString));
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [TestMethod]
         public void ErrorInFourRecordsTestCase2()
         {
@@ -171,6 +210,9 @@ namespace TestForStrings
             Assert.IsTrue(CompareStrings(convertedString, validString));
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [TestMethod]
         public void NoComplianceCallsAfterMidnight()
         {
@@ -190,6 +232,9 @@ namespace TestForStrings
             Assert.IsTrue(CompareStrings(convertedString, validString));
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [TestMethod]
         public void AllComplianceCallsAfterMidnight()
         {
@@ -211,6 +256,9 @@ namespace TestForStrings
             Assert.IsTrue(CompareStrings(convertedString, validString));
         }
         
+        /// <summary>
+        /// 
+        /// </summary>
         [TestMethod]
         public void VoidListCallsAfterMidnight()
         {
@@ -222,7 +270,5 @@ namespace TestForStrings
 
             Assert.IsTrue(CompareStrings(convertedString, validString));
         }
-
-
     }
 }

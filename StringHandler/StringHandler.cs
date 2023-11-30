@@ -5,9 +5,16 @@ using System.Text.RegularExpressions;
 
 namespace LibraryForStringHandler
 {
+    /// <summary>
+    /// Класс для обработки строковых переменных.
+    /// </summary>
     public class StringHandler
     {
-
+        /// <summary>
+        /// Метод для нахождения "уникальных" символов и записи их в новую строку.
+        /// </summary>
+        /// <param name="String"></param>
+        /// <returns></returns>
         public static string DividingTheString(string String)
         {
             if (String == "")
@@ -34,6 +41,12 @@ namespace LibraryForStringHandler
             return resString;
         }
 
+        /// <summary>
+        /// Метод для создания строки с записями звонков на указанный номер после полуночи.
+        /// </summary>
+        /// <param name="phoneRecords"></param>
+        /// <param name="targetNumber"></param>
+        /// <returns></returns>
         public static StringBuilder GetCallsAfterMidnight(List<string> phoneRecords, string targetNumber)
         {
             StringBuilder result = new StringBuilder();
