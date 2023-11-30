@@ -29,7 +29,7 @@ namespace Lab_4
                 {
                     case 1:
                         Console.WriteLine("Введите строку:");
-                        inputString = Console.ReadLine();
+                        inputString = ReadString();
                         Console.WriteLine(StringHandler.DividingTheString(inputString));
                         break;
                     
@@ -42,13 +42,13 @@ namespace Lab_4
                         i = 0;
                         while (i < n)
                         {
-                            phoneRecords.Add(Console.ReadLine()); // +1234567890123 00:30 150 +9876543210987 23:45 120 +1112223334445 12:58 90 +1234567890123 01:30 100 +4445556667778 23:15 80
+                            phoneRecords.Add(Console.ReadLine());
                             i++;
                         }
                         
                         Console.WriteLine("\nВведите номер телефона, для которого ищем звонки после полуночи: \n");
                         // Номер, для которого ищем звонки после полуночи
-                        string targetNumber = Console.ReadLine();
+                        string targetNumber = StringHandler.ValidateInput(Console.ReadLine());
                         Console.WriteLine();
 
                         StringBuilder filteredRecords = StringHandler.GetCallsAfterMidnight(phoneRecords, targetNumber);
@@ -74,7 +74,7 @@ namespace Lab_4
         /// Метод для проверки вводимых целочисленных данных на корректность.
         /// </summary>
         /// <returns></returns>
-        public static int ReadInt()
+        private static int ReadInt()
         {
             string numeral = Console.ReadLine();
             int value;
@@ -86,6 +86,24 @@ namespace Lab_4
             return value;
         }
 
-
+        /// <summary>
+        /// Метод для проверки вводимой строки на корректность.
+        /// </summary>
+        /// <returns></returns>
+        private static string ReadString()
+        {
+            string value = Console.ReadLine();
+            bool isRun = true;
+            while (isRun)
+            {
+                if (value == "")
+                {
+                    Console.WriteLine("Строка пустая. Введите другю строку");
+                    value = Console.ReadLine();
+                }
+                else isRun = false;
+            }
+            return value;
+        }
     }
 }

@@ -14,3 +14,5 @@ public static string ValidateInput(string chekingString)
     }
     return chekingString;
 }
+
++1234567890123 00:30 150 +9876543210987 23:45 120 +1112223334445 12:58 90 +1234567890123 01:30 100 +4445556667778 23:15 80

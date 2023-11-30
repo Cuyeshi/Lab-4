@@ -53,20 +53,20 @@ namespace TestForStrings
         }
 
         /// <summary>
-        /// Тест, проверяющий работоспособность первой задачи при вводе пустой строки
+        /// Тест, проверяющий работоспособность первой задачи при вводе строки с одним символом.
         /// </summary>
         [TestMethod]
         public void ZeroWordsTestCase1()
         {
-            string inputString = "";
+            string inputString = "n";
             string convertedString = StringHandler.DividingTheString(inputString);
-            string validString = " ";
+            string validString = "n";
 
             Assert.IsTrue(CompareStrings(convertedString, validString));
         }
 
         /// <summary>
-        /// 
+        /// Тест, проверяющий работоспособность первой задачи при вводе строки цифр.
         /// </summary>
         [TestMethod]
         public void NumbersStringTestCase1()
@@ -79,7 +79,7 @@ namespace TestForStrings
         }
 
         /// <summary>
-        /// 
+        /// Тест, проверяющий работоспособность первой задачи при вводе строки символов разных регистров.
         /// </summary>
         [TestMethod]
         public void DifferentRegisterTestCase1()
@@ -92,7 +92,7 @@ namespace TestForStrings
         }
 
         /// <summary>
-        /// 
+        /// Тест, проверяющий работоспособность первой задачи при вводе строки символов верхнего регистра.
         /// </summary>
         [TestMethod]
         public void UpperRegisterTestCase1()
@@ -105,7 +105,7 @@ namespace TestForStrings
         }
 
         /// <summary>
-        /// 
+        /// Тест, проверяющий работоспособность первой задачи при вводе строки символов нижнего регистра.
         /// </summary>
         [TestMethod]
         public void LowerRegisterTestCase1()
@@ -118,7 +118,7 @@ namespace TestForStrings
         }
 
         /// <summary>
-        /// 
+        /// Тест, проверяющий работоспособность первой задачи при вводе строки специальных символов.
         /// </summary>
         [TestMethod]
         public void SpecialSymbolsTestCase1()
@@ -131,7 +131,7 @@ namespace TestForStrings
         }
 
         /// <summary>
-        /// 
+        /// Тест, проверяющий работоспособность второй задачи с одной подходящей записью.
         /// </summary>
         [TestMethod]
         public void OneRecordAfterMidNight()
@@ -149,7 +149,7 @@ namespace TestForStrings
         }
 
         /// <summary>
-        /// 
+        /// Тест, проверяющий работоспособность второй задачи с двумя подходящими записями.
         /// </summary>
         [TestMethod]
         public void FourRecordAfterMidNight()
@@ -171,7 +171,7 @@ namespace TestForStrings
         }
 
         /// <summary>
-        /// 
+        /// Тест, проверяющий работоспособность второй задачи с выводом ошибки о формате ввода одной записи.
         /// </summary>
         [TestMethod]
         public void ErrorInOneRecordsTestCase2()
@@ -189,7 +189,7 @@ namespace TestForStrings
         }
 
         /// <summary>
-        /// 
+        /// Тест, проверяющий работоспособность второй задачи с выводом ошибки о формате ввода четырёх записи.
         /// </summary>
         [TestMethod]
         public void ErrorInFourRecordsTestCase2()
@@ -211,7 +211,7 @@ namespace TestForStrings
         }
 
         /// <summary>
-        /// 
+        /// Тест, проверяющий работоспособность второй задачи без подходящих записей.
         /// </summary>
         [TestMethod]
         public void NoComplianceCallsAfterMidnight()
@@ -233,7 +233,7 @@ namespace TestForStrings
         }
 
         /// <summary>
-        /// 
+        /// Тест, проверяющий работоспособность второй задачи с подходящими записями.
         /// </summary>
         [TestMethod]
         public void AllComplianceCallsAfterMidnight()
@@ -255,9 +255,9 @@ namespace TestForStrings
 
             Assert.IsTrue(CompareStrings(convertedString, validString));
         }
-        
+
         /// <summary>
-        /// 
+        /// Тест, проверяющий работоспособность второй задачи с пустым списком записей.
         /// </summary>
         [TestMethod]
         public void VoidListCallsAfterMidnight()

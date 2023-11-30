@@ -11,6 +11,22 @@ namespace LibraryForStringHandler
     public class StringHandler
     {
         /// <summary>
+        /// Метод для проверки вводимых строковых данных на корректность.
+        /// </summary>
+        /// <returns></returns>
+        public static string ValidateInput(string chekingString)
+        {
+            string pattern = @"^\+375\d{9}$";
+
+            while (!Regex.IsMatch(chekingString, pattern))
+            {
+                Console.WriteLine("\nНекорректный ввод!");
+                chekingString = Console.ReadLine();
+            }
+            return chekingString;
+        }
+
+        /// <summary>
         /// Метод для нахождения "уникальных" символов и записи их в новую строку.
         /// </summary>
         /// <param name="String"></param>
@@ -58,7 +74,7 @@ namespace LibraryForStringHandler
 
                 if (parts.Length != 3)
                 {
-                    Console.WriteLine($"Некорректны ввод записи: {k + 1}\n");
+                    Console.WriteLine($"Некорректный ввод записи: {k + 1}\n");
                     phoneRecords.RemoveAt(k);
                     break;
                 }
@@ -108,6 +124,8 @@ namespace LibraryForStringHandler
 
             return result;
         }
+
+        
     }
 }
 
